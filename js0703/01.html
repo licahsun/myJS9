@@ -51,7 +51,7 @@
             s1 = s1 + i;
         }
         document.write(`1-100的奇數合=${s1}<br>`);
-
+document.write("<hr>")
         // var s2 = 0;
         // for (var i = 100; i > 0; i = i - 2) {
         //     s2 = s2 + i;
@@ -74,7 +74,7 @@
             s2 = s2 + i;
         }
         document.write(`100-1的偶數合=${s2}<br>`);
-
+document.write("<hr>")
         // 請統計1-100之間的3的倍數同時也是5的倍數合與列出數字?
         // // coffee sample
         // document.write("請統計1-100之間的3的倍數同時也是5的倍數合?<br>");
@@ -84,7 +84,7 @@
         // }
 
         // coffee sample
-        // 寫法1=>巢狀檢查
+        寫法1=>巢狀檢查
         var s3 = 0
         for (var i = 1; i <= 100; i = i + 1) {
             // 檢查是否為3的倍數
@@ -97,21 +97,35 @@
             }
         }
 
-        document.write("<br>1-100中3與5的倍數合=" + s3);
-        //
-        var s3 = 0
-        for (var i = 1; i <= 100; i = i + 1) {
-            // 檢查是否為3的倍數
+        document.write(`<br>1-100中3與5的倍數合=${s3}<br>`);
+        
+
+        var endValue = 0;
+        for (var i = 100; i >= 1; i = i - 1) {
             if (i % 3 == 0) {
-                // 再檢查是否為5的倍數
                 if (i % 5 == 0) {
-                    s3 = s3 + i;
-                    document.write(i + ",");
+                    endValue = i; //已經找到最後一個值了
+                    break; //結束迴圈
                 }
             }
         }
-
-        document.write("=" + s3);
+        var s3 = 0;
+        for (var i = 1; i <= 100; i = i + 1) {
+            if (i % 3 == 0) {
+                if (i % 5 ==0) {
+                    s3 = s3 + i;
+                    document.write(i);
+                    if (i == endValue) {
+                        document.write("=");
+                        break;
+                    }else {
+                        document.write("+");
+                    }
+                }
+            }
+        }
+        document.write(s3);
+        document.write("<br>");
 
         // 寫法2=>邏輯運算子
 

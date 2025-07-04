@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="result">結果</p>
+    <br>
+    <p id="a">及格人數</p>
+    <p id="b">不及格人數</p>
+    <p id="num1">全班總分</p>
+    <p id="num2">全班平均</p>
+
+    <script>
+        do {
+            var score = prompt("請輸入成績");
+            if (score == -1) {
+                break;
+            } else if (score == "") {
+                alert("成績不能空白，請重新輸入");
+                continue;
+            } else if (score < 0 || score > 100) {
+                alert("err!不是有效範圍1-100，請重新輸入!");
+                continue;
+            } else if (isNaN(Number(score))) {
+                alert("非數字，請重新輸入");
+                continue;
+            }
+            alert(`輸入的成績為:${score}`);
+            console.log(`${score}`);
+        } while (1);
+
+
+
+        
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <body>
+        <!-- 標籤 -->
+        <label for="n1">數值1</label>
+        <!-- 文字方塊 -->
+        <input type="number" id="n1">
+        <br>
+        <br>
+        <button onclick="tot()">+</button>
+        <button onclick="subt()">-</button>
+        <button onclick="mult()">*</button>
+        <button onclick="divi()">/</button>
+        <br>
+        <br>
+        <label for="n2">數值2</label>
+        <input type="number" id="n2">
+
+        <br>
+        <br>
+        <p id="result">合計結果</p>
+
+        <script>
+            var n1 = document.getElementById("n1");
+            var n2 = document.getElementById("n2");
+            var result = document.getElementById("result");
+
+            function tot() {
+                result.textContent = parseInt(n1.value) + parseInt(n2.value);
+            }
+
+            function subt() {
+                result.textContent = parseInt(n1.value) - parseInt(n2.value);
+            }
+
+            function mult() {
+                result.textContent = parseInt(n1.value) * parseInt(n2.value);
+            }
+
+            function divi() {
+                // 取小數位 => toFixed(小數點後第幾位)
+                result.textContent = (parseInt(n1.value) / (n2.value)).toFixed(2);
+            }
+
+
+        </script>
+    </body>
+
+</html>

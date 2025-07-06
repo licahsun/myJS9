@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>成績結果</h2>
+    <p id="result">結果</p>
+    <script>
+        var pass = 0;
+        var failed = 0;
+        var tot = 0;
+        var avg = 0.0;
+
+        while (1) {
+            var score = prompt(`請輸入分數`);
+            if (score == -1) {
+                alert(`成績輸入結束`);
+                break;
+            }
+            if (score == null) {
+                pass = 0;
+                failed = 0;
+                tot = 0;
+                avg = 0;
+                alert(`您按了取消，即將結束輸入`);
+                break;
+            }
+            if (score > 100 || score < 0) {
+                alert("err!不是有效範圍0-100，請重新輸入");
+                continue;
+            }
+            if (isNaN(Number(score))) {
+                alert(`請輸入數字`);
+                continue;
+            }
+            if (score.trim() == "") {
+                alert(`不得為空白，請重新輸入`);
+                continue;
+            }
+            score = parseInt(score);
+            if (score >= 60) {
+                pass++;
+            } else {
+                failed++;
+            }
+            tot = tot + score;
+        }
+        if (pass + failed > 0) {
+            avg = tot / (pass + failed);
+        }
+        var result = document.getElementById("result");
+        result.innerHTML = `
+        　及格人數:${pass}人<br>
+        不及格人數:${failed}人<br>
+        　總分:${tot}分<br>
+        總平均:${avg.toFixed(2)}分<br>
+        `;s
+    </script>
+</body>
+
+</html>

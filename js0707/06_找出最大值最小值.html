@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr1 = [5, 60, 3, 90, 33, 1, 100];
+        let max = arr1[0];
+        let min = arr1[0];
+
+        //for
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] > max) {
+                max = arr1[i];
+            } else if (arr1[i] < min) {
+                min = arr1[i];
+            }
+        }
+        console.log(`min=${min}，max=${max}`);
+
+        //for of
+        for (let i of arr1) {
+            if (arr1[i] > max) {
+                max = arr1[i];
+            } else if (arr1[i] < min) {
+                min = arr1[i];
+            }
+        }
+        console.log(`min=${min}，max=${max}`);
+
+        //forEach
+        arr1.forEach((i) => {
+            if (arr1[i] > max) {
+                max = arr1[i];
+            } else if (arr1[i] < min) {
+                min = arr1[i];
+            }
+        })
+        console.log(`min=${min}，max=${max}`);
+
+
+        /*
+                let arr1 = [5, 60, 3, 90, 33, 1, 100];
+                let max = arr1[0];
+                let min = arr1[0];
+        
+                //找出陣列中的最大值與最小值
+                //for
+                for (let i = 0; i < arr1.length; i++) {
+                    //檢查是否比目前的max大
+                    if (arr1[i] > max) {
+                        max = arr1[i];
+                    } else if (arr1[i] < min) {
+                        //檢查是否比目前的min小
+                        min = arr1[i];
+                    }
+                }
+                console.log(`max=${max}，min=${min}`);
+        
+                //for of
+                max = arr1[0]; //前面宣告過，故這裡可不用let
+                min = arr1[0];
+                for (let i of arr1) {
+                    if (i > max) {
+                        max = i;
+                    } else if (i < min) {
+                        min = i;
+                    }
+                }
+                console.log(`max=${max}，min=${min}`);
+        
+                //forEach
+                max = arr1[0];
+                min = arr1[0];
+                arr1.forEach((i) => {
+                    if (i > max) {
+                        max = i;
+                    } else if (i < min) {
+                        min = i;
+                    }
+                }
+                )
+                console.log(`max=${max}，min=${min}`);
+        
+                //sort
+                arr1.sort((a, b) => {
+                    return a - b; //遞增排序
+                })
+                console.log(arr1);
+                console.log(`max=${arr1[arr1.length - 1]}，min=${arr1[0]}`); //總長度-1就是最後一個值
+        
+                //數學類別
+                //最大值 => Math.max()
+                //最小值 => Math.min()
+                max = Math.max(...arr1); //其餘值，僅在找最大值、最小值適用
+                min = Math.min(...arr1);
+                console.log(`max=${max}，min=${min}`);
+        */
+
+
+    </script>
+</body>
+
+</html>

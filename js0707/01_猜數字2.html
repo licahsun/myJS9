@@ -37,21 +37,24 @@
         let txtNo = ""; //公用變數(可以跨區使用)
 
         function btnClick() {
-            count++
+            count++;
             txtNo = document.getElementById("txtNo");
             let keyNum = parseInt(txtNo.value);
             //檢查是否空白
             if (isNaN(keyNum)) {
                 alert(`不能空白，請重新輸入`);
                 txtNo.focus();
-                return;
+                return;//結束function
             }
-
             //檢查是否結束遊戲
             if (keyNum == -1) {
                 return;
             }
-
+            if (keyNum < 0 || keyNum > 100) {
+                alert(`請輸入1-100的數字`);
+                txtno.focus();
+                return;
+            }
             if (keyNum === rd) {
                 result.innerHTML += `第${count}次，Bingo<br>`;
                 //隱藏遊戲區

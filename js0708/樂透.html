@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>樂透隨機選號</h2>
+    <br>
+    <p id="result">結果</p>
+
+    <script>
+        //威力彩:1-38隨機選6個數字；1-8隨機選1(可與前一區重複)
+        let arr1 = [];
+        document.write(`威力彩:`);
+        for (i = 1; i <= 6; i++) {
+            let rd1 = Math.floor((Math.random() * 38) + 1);
+            arr1.push(rd1);
+            document.write(`(${rd1})`);
+        }
+        document.write(`&nbsp&nbsp特別號`);
+        for (i = 1; i <= 1; i++) {
+            let rd2 = Math.floor((Math.random() * 8) + 1);
+
+            document.write(`(${rd2})<br>`);
+
+        }
+arr1.forEach((n)=>{
+    console.log(n);
+})
+let num1=arr1[n];
+while (1){
+    if (num1-arr1[n]==0){
+        
+    }
+}
+
+        //大樂透:1-49隨機選6+1(特別號不能與前6碼重複)
+        let arr2 = [];
+        document.write(`大樂透:`);
+        for (i = 1; i <= 6; i++) {
+            let rd3 = Math.floor((Math.random() * 49) + 1);
+            arr2.push(rd3);
+            document.write(`(${rd3})`);
+            arr2 = [rd3];
+        }
+        document.write(`&nbsp&nbsp特別號`);
+        for (i = 1; i <= 1; i++) {
+            let rd4 = Math.floor((Math.random() * 49) + 1);
+            document.write(`(${rd4})<br>`);
+        }
+
+        //今彩539:1-39隨機選5
+        let arr3 = [];
+        document.write(`今彩539:`);
+        for (i = 1; i <= 5; i++) {
+            let rd5 = Math.floor((Math.random() * 39) + 1);
+            arr3.push(rd5);
+            document.write(`(${rd5})`);
+        }
+
+
+    </script>
+</body>
+
+</html>

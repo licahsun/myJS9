@@ -40,14 +40,19 @@
             count++;
             txtNo = document.getElementById("txtNo");
             let keyNum = parseInt(txtNo.value);
-            //檢查是否空白
+            //檢查是否非數字
             if (isNaN(keyNum)) {
-                alert(`不能空白，請重新輸入`);
+                alert(`非數字，請重新輸入`);
                 txtNo.focus();
                 return;//結束function
             }
             //檢查是否結束遊戲
             if (keyNum == -1) {
+                return;
+            }
+            if (keyNum.trim() === "") {
+                alert(`不能空白，請重新輸入`);
+                txtNo.focus();
                 return;
             }
             if (keyNum < 0 || keyNum > 100) {

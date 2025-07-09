@@ -1,3 +1,4 @@
++1
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,60 +10,88 @@
 
 <body>
     <h2>樂透隨機選號</h2>
-    <br>
-    <p id="result">結果</p>
+    <button onclick="lott1()">威力彩</button>
+    <button onclick="lott2()">大樂透</button>
+    <button onclick="lott3()">今彩539</button>
+    <hr>
+    <p id="lottNum">第一區號碼</p><br>
+    <p id="sortNum">排序後號碼</p><br>
+    <P id="lottNum2">第二區號碼</P>
 
     <script>
-        //威力彩:1-38隨機選6個數字；1-8隨機選1(可與前一區重複)
-        let arr1 = [];
-        document.write(`威力彩:`);
-        for (i = 1; i <= 6; i++) {
-            let rd1 = Math.floor((Math.random() * 38) + 1);
-            arr1.push(rd1);
-            document.write(`(${rd1})`);
-        }
-        document.write(`&nbsp&nbsp特別號`);
-        for (i = 1; i <= 1; i++) {
-            let rd2 = Math.floor((Math.random() * 8) + 1);
+        let lottNum = document.getElementById("lottNum");
+        let sortNum = document.getElementById("sortNum");
+        let lottNum2 = document.getElementById("lottNum2");
 
-            document.write(`(${rd2})<br>`);
+        function lott1() {
+            let arr1 = []
+            while (1) {
+                let Num = Math.floor(Math.random() * 49 + 1);
+                if (arr1.length == 6) {
+                    break;
+                }
+                if (arr1.includes(Num) !== true) {
+                    arr1.push(Num);
+                }
 
-        }
-arr1.forEach((n)=>{
-    console.log(n);
-})
-let num1=arr1[n];
-while (1){
-    if (num1-arr1[n]==0){
-        
-    }
-}
+            }
+            lottNum.textContent = "第一區號碼:" + arr1;
 
-        //大樂透:1-49隨機選6+1(特別號不能與前6碼重複)
-        let arr2 = [];
-        document.write(`大樂透:`);
-        for (i = 1; i <= 6; i++) {
-            let rd3 = Math.floor((Math.random() * 49) + 1);
-            arr2.push(rd3);
-            document.write(`(${rd3})`);
-            arr2 = [rd3];
-        }
-        document.write(`&nbsp&nbsp特別號`);
-        for (i = 1; i <= 1; i++) {
-            let rd4 = Math.floor((Math.random() * 49) + 1);
-            document.write(`(${rd4})<br>`);
+            arr1.sort((a, b) => {
+                return a - b;
+            })
+            sortNum.textContent = "排序後號碼:" + arr1;
+            lottNum2.textContent = "特別號:" + (Math.floor(Math.random() * 8 + 1));
         }
 
-        //今彩539:1-39隨機選5
-        let arr3 = [];
-        document.write(`今彩539:`);
-        for (i = 1; i <= 5; i++) {
-            let rd5 = Math.floor((Math.random() * 39) + 1);
-            arr3.push(rd5);
-            document.write(`(${rd5})`);
+        function lott2() {
+            let arr2 = []
+            while (1) {
+                let Num = Math.floor(Math.random() * 49 + 1);
+                if (arr2.length == 6) {
+                    break;
+                }
+                if (arr2.includes(Num) !== true) {
+                    arr2.push(Num);
+                }
+
+            }
+            lottNum.textContent = "第一區號碼:" + arr2;
+
+            arr2.sort((a, b) => {
+                return a - b;
+            })
+            sortNum.textContent = "排序後號碼:" + arr2;
+
+            while (1) {
+                let Num2 = Math.floor(Math.random() * 49 + 1);
+                if (arr2.includes(Num2) !== true) {
+                    lottNum2.textContent = "特別號:" + Num2;
+                    break;
+                }
+            }
         }
 
+        function lott3() {
+            let arr3 = []
+            while (1) {
+                let Num = Math.floor(Math.random() * 39 + 1);
+                if (arr3.length == 5) {
+                    break;
+                }
+                if (arr3.includes(Num) !== true) {
+                    arr3.push(Num);
+                }
 
+            }
+            lottNum.textContent = "第一區號碼:" + arr3;
+
+            arr3.sort((a, b) => {
+                return a - b;
+            })
+            sortNum.textContent = "排序後號碼:" + arr3;
+            lottNum2.textContent = "";
+        }
     </script>
 </body>
 

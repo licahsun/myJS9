@@ -27,39 +27,144 @@
         // printEvery3();
 
 
-        // 3
+        // 3 寫一個函式stars ，輸出連續N個*
         // function stars(i) {
+        //     let result = ""
         //     for (let n = 1; n <= i; n++) {
-        //         document.write("*");
+        //         result +="*";
         //     }
-        //     document.write("<br>");
+        //     console.log(result);
         // }
         // stars(3);
         // stars(10);
 
-        // 4
-        let str = "";
-        function isUpperCase(str) { 
-        
-            } 
-        
+        // 4 寫一個函式 isUpperCase ，檢查第一個字母是否為大寫
+        function isUpperCase(str) {
+            // 方法1 檢查之前先去除空白
+            if (str.trim().length === 0) {
+                return false;
+            }
+
+            // 簡化寫法
+            // return str[0] === str[0].toUpperCase();
+
+            // 方法2:使用迴圈處理
+            let UpperCase = false;
+            str = str.trim();
+            for (let i = 0; i < str.length; i++){
+                if(str[0]===str[0],toUpperCase()){
+                    UpperCase = true;
+                    break;
+                }
+            }
+            return UpperCase;
+
+        }
         console.log(isUpperCase("ABCD"));
         console.log(isUpperCase(""));
         console.log(isUpperCase("aBCD"));
 
 
-        //5
+        //5 寫一個函式 isAllUpperCase，檢查所有字母是否為大寫
+        // function isAllUpperCase(str) {
+
+        //     //整個字串
+        //     if (str.trim().length === 0) {
+        //         return false;
+        //     }
+        //     if (str !== str.toUpperCase()) {
+        //         return false;
+        //     } return true;
+
+        //逐一比對字母
+        // if (str.trim().length === 0) {
+        //     return false;
+        // }
+        // for (let i = 0; i < str.length; i++) {
+        //     if (str[i] !== str[i].toUpperCase()) {
+        //         return false;
+        //     }
+        // }
+        // return true;
+        // }
+        // console.log(isAllUpperCase("ABCD"));
+        // console.log(isAllUpperCase(""));
+        // console.log(isAllUpperCase("ABCDEFGHIJKLm"));
 
 
+        //6 尋找第一個大寫字母的內容與位置
+        // function position(str) {
+        //     for (let i= 0; i< str.length;i++){
+        //         if(str[i] === str[i].toUpperCase()){
+        //     return str[i]+" "+i;
+        //         }
+        //     }
+        //     return -1;
+        // }
+        // console.log(position("abcd"));
+        // console.log(position("AbcD"));
+        // console.log(position("abCD"));
 
-        //6
 
-        function position(){
+        //7 寫一個函式 findSmallCount，找出陣列中的值，比第2個參數小的總個數
+        // function findSmallCount(arr, n) {
+        //     let counter = 0;
+        //     for (let i = 0; i < arr.length; i++) {
+        //         // 陣列中的值若小於n，則次數+1
+        //         if (arr[i] < n) {
+        //             counter++;
+        //         }
+        //     }
+        //     return counter;
+        // }
+        // console.log(findSmallCount([1, 2, 3], 2));
+        // console.log(findSmallCount([1, 2, 3, 4, 5], 0));
 
+
+        //8 寫一個函式 findSmallerTotal，找出陣列中的值，比第2個參數小的總合
+        // function findSmallerTotal(arr, n) {
+        //     let tot = 0;
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i] < n) {
+        //             tot += arr[i];
+        //         }
+        //     }
+        //     return tot;
+        // }
+
+        // console.log(findSmallerTotal([1, 2, 3], 3));
+        // console.log(findSmallerTotal([1, 2, 3], 1));
+        // console.log(findSmallerTotal([3, 2, 5, 8, 7], 999));
+        // console.log(findSmallerTotal([3, 2, 5, 8, 7], 0));
+
+        //9 寫一個函式 findAllSmall，找出陣列中的值，比第2個參數小的值保存在新的陣列中
+        // function findAllSmall(arr, n) {
+        //     let arr2 = [];
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i] < n) {
+        //             arr2.push(arr[i]);
+        //         }
+        //     }return arr2;
+        // }
+        // console.log(findAllSmall([1, 2, 3], 10)); 
+        // console.log(findAllSmall([1, 2, 3], 2)); 
+        // console.log(findAllSmall([1, 3, 5, 4, 2], 4)); 	
+
+
+        //10 寫一個函式 sum，加總陣列中的值
+        function sum(arr) {
+            let tot = 0;
+            for (let i = 0; i < arr.length; i++) {
+                tot += arr[i];
+            }
+            return tot;
         }
-        console.log(position("abcd"));
-        console.log(position("AbcD"));
-        console.log(position("abCD"));
+        console.log(sum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); 	// returns 55
+        console.log(sum([])); 							// return 0
+        console.log(sum([-10, -20, -30])); 				// return -60
+
+
+
 
     </script>
 </body>

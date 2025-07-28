@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        img {
+            width: 200px;
+            /* height: 150px; */
+        }
+    </style>
+
+    <img src="./images/logan-weaver-lgnwvr-kMBKg3z3Yzk-unsplash.jpg" alt="" id="pic">
+    <script>
+        let pic = document.querySelector(`#pic`);
+        // 滑鼠碰到圖片時換圖
+        pic.addEventListener(`mouseover`,() =>{
+            pic.src="./images/peter-thomas-ep-6kGyBSXk-unsplash.jpg"
+        });
+
+        // 滑鼠碰到圖片時還原
+        pic.addEventListener(`mouseout`,() =>{
+            pic.src="./images/logan-weaver-lgnwvr-kMBKg3z3Yzk-unsplash.jpg"
+        });
+    </script>
+</body>
+
+</html>
